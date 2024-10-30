@@ -1,0 +1,1 @@
+var value=6E4,timer=0,i=0;function timedCount(a){value=1E3*parseInt(a);i=parseInt(a);0==value&&(value=6E4);0==i&&(i=60);timer+=i;var b=parseInt(timer,10);a=Math.floor(b/3600);var c=Math.floor((b-3600*a)/60),b=b-3600*a-60*c;10>a&&(a="0"+a);10>c&&(c="0"+c);10>b&&(b="0"+b);postMessage(a+":"+c+":"+b);setTimeout("timedCount(i)",value)}onmessage=function(a){timedCount(a.data)};
